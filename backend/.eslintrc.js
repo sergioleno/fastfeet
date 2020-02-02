@@ -14,11 +14,11 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-console': 'off', //desabilita erro console.log
     'prettier/prettier': 'error',
+    'no-console': 'off', //desabilita erro console.log
     'class-methods-use-this': 'off', //evita regra eslint que obriga todo método da classe a usar this
     'no-param-reassign': 'off', //permite alterar parâmetros recebidos(o eslint nao permite). necessário para usar sequelize
-    "camelcase": 'off', //em alguns momentos não da
-    'no-unused-vars': ['error', { "argsIgnorePattern": 'next' }], //às vezes a variável next será necessária nos middlewares
+    camelcase: 'off', //em alguns momentos não da
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }], //às vezes a variável next será necessária nos middlewares
   },
 };
