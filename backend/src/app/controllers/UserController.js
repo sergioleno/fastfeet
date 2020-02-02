@@ -1,8 +1,8 @@
-import Student from '../models/Student';
+import User from '../models/User';
 
 class UserController {
   async store(req, res) {
-    const userExists = await Student.findOne({
+    const userExists = await User.findOne({
       where: { email: req.body.email },
     });
     if (userExists) {
@@ -10,7 +10,7 @@ class UserController {
     }
 
     //name, email, password_hash
-    const { id, name, email, password_hash } = await Student.create(req.body);
+    const { id, name, email, password_hash } = await User.create(req.body);
     return res.json({ id, name, email, password_hash });
   }
 

@@ -2,7 +2,6 @@ import Recipient from '../models/Recipient';
 
 class RecipientController {
   async store(req, res) {
-    //name,street, number, complement, state, city, zip_code
     const {
       id,
       name,
@@ -12,7 +11,7 @@ class RecipientController {
       state,
       city,
       zip_code,
-    } = await Student.create(req.body);
+    } = await Recipient.create(req.body);
     return res.json({
       id,
       name,
