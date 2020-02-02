@@ -4,8 +4,8 @@ class Users extends Model {
   static init(sequelize) {
     super.init(
       {
-        // init do Model
         // somente as colunas inseridas pelo usuário
+        //name, email, password_hash
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password_hash: Sequelize.STRING,
