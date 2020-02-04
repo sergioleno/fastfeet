@@ -19,7 +19,7 @@ class UserController {
 
     const user = await User.findByPk(req.userId);
     //checa se o usário está trocando email
-    if (email !== user.email) {
+    if (email && email !== user.email) {
       const userExists = await User.findOne({
         where: { email },
       });

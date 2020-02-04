@@ -25,7 +25,30 @@ class RecipientController {
   }
 
   async update(req, res) {
-    return res.json({ ok: true });
+    const { id } = req.body;
+
+    const recipient = await Recipient.findByPk(id);
+    //checa se o usário está trocando email
+
+    const {
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      zip_code,
+    } = await recipient.update(req.body);
+    return res.json({
+      id,
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      zip_code,
+    });
   }
 }
 
